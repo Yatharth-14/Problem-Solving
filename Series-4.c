@@ -1,0 +1,30 @@
+#include<stdio.h>
+#include<math.h>
+int main()
+{
+    int n,x;
+    scanf("%d",&n);
+    scanf("%d",&x);
+    float sum=0;
+    for (int i = 1; i <= n; i++)
+    {
+        int num=2*i-1;
+        int fact=1;
+        while (num>0)
+        {
+            fact*=num;
+            num--;
+        }
+        if(i%2==0)
+        {
+            sum-= pow(x,2*i-1)/fact;
+        }
+        else
+        {
+            sum+= pow(x,2*i-1)/fact;
+        }
+    }
+    printf("%f",sum);
+    return 0;
+    
+}
